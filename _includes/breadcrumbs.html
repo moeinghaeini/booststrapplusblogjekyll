@@ -1,0 +1,37 @@
+<!-- Breadcrumb Navigation -->
+{% if page.layout != 'home' %}
+<nav aria-label="breadcrumb" class="breadcrumb-nav">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{{ '/' | relative_url }}" title="Home">
+          <i class="fas fa-home"></i> Home
+        </a>
+      </li>
+      {% if page.layout == 'post' %}
+        <li class="breadcrumb-item">
+          <a href="{{ '/posts/' | relative_url }}" title="All Posts">Posts</a>
+        </li>
+        {% if page.categories %}
+          {% for category in page.categories %}
+            <li class="breadcrumb-item">
+              <a href="{{ '/categories/' | append: category | downcase | relative_url }}" title="{{ category }}">{{ category }}</a>
+            </li>
+          {% endfor %}
+        {% endif %}
+        <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+      {% elsif page.layout == 'page' %}
+        {% if page.title == 'About' %}
+          <li class="breadcrumb-item active" aria-current="page">About</li>
+        {% elsif page.title == 'Contact' %}
+          <li class="breadcrumb-item active" aria-current="page">Contact</li>
+        {% else %}
+          <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+        {% endif %}
+      {% else %}
+        <li class="breadcrumb-item active" aria-current="page">{{ page.title | default: 'Page' }}</li>
+      {% endif %}
+    </ol>
+  </div>
+</nav>
+{% endif %}

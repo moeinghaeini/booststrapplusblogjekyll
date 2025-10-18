@@ -1,0 +1,38 @@
+title:              Bootstrap Plus Blog
+email:              contact@bootstrap-plus-blog.com
+description:        A modern, responsive blog built with Bootstrap and Jekyll. Discover insights on web development, design, and technology.
+author:             Bootstrap Plus Blog
+baseurl:            ""
+url:                "https://moeinghaeini.github.io"
+
+# Social Profiles
+twitter_username:   bootstrapplusblog
+github_username:    moeinghaeini
+facebook_username:  bootstrapplusblog
+instagram_username: bootstrapplusblog
+linkedin_username:  bootstrap-plus-blog
+
+# SEO Settings
+lang:               en
+timezone:           UTC
+permalink:          /:year/:month/:day/:title/
+paginate:           5
+paginate_path:      "/posts/page:num/"
+
+# Add your google-analytics ID here to activate google analytics
+google_analytics:   G-XXXXXXXXXX # Replace with your actual Google Analytics 4 ID
+
+# SEO Meta
+seo:
+  title_separator:  " | "
+  description_length: 160
+  image:            "/img/og-image.jpg"
+
+# Build settings
+markdown:           kramdown
+paginate:           5
+paginate_path:      "/posts/page:num/"
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site

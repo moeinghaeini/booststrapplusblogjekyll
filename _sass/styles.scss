@@ -1,0 +1,76 @@
+// Import Core Clean Blog SCSS
+@import "../assets/vendor/startbootstrap-clean-blog/scss/styles.scss";
+
+// Custom SEO and Performance Styles
+.breadcrumb-nav {
+  background-color: #f8f9fa;
+  padding: 0.5rem 0;
+  margin-bottom: 0;
+  
+  .breadcrumb {
+    margin-bottom: 0;
+    background: transparent;
+    padding: 0;
+    
+    .breadcrumb-item {
+      font-size: 0.875rem;
+      
+      a {
+        color: #6c757d;
+        text-decoration: none;
+        
+        &:hover {
+          color: #0085a1;
+          text-decoration: underline;
+        }
+      }
+      
+      &.active {
+        color: #495057;
+        font-weight: 500;
+      }
+      
+      + .breadcrumb-item::before {
+        content: "›";
+        color: #6c757d;
+      }
+    }
+  }
+}
+
+// Performance optimizations
+img {
+  loading: lazy;
+  decoding: async;
+}
+
+// Improved focus styles for accessibility
+a:focus,
+button:focus {
+  outline: 2px solid #0085a1;
+  outline-offset: 2px;
+}
+
+// Print styles
+@media print {
+  .breadcrumb-nav,
+  .navbar,
+  .footer,
+  .btn {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+  
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+}

@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: {{ site.url }}/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_site/
+Disallow: /.git/
+
+# Allow important files
+Allow: /assets/
+Allow: /img/
+Allow: /css/
+Allow: /js/
